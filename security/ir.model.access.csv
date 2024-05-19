@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+cupon,Cupon,model_dm_cupon,base.group_user,1,1,1,1
+categoria,Categoria,model_dm_categoria,base.group_user,1,1,1,1
+voucher,Voucher,model_dm_cupon_vaucher,base.group_user,1,1,1,1
+wz_cupon,Cupon wizard,model_wz_cupon,base.group_user,1,1,1,1

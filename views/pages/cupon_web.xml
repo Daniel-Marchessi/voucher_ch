@@ -1,0 +1,76 @@
+<odoo>
+
+    <data>
+        <record id="my_cupon" model="website.page">
+            <field name="name">Cupon</field>
+            <field name="url">/my_cupons</field>
+            <field name="type">qweb</field>
+            <field name="key">voucher_ch.my_cupon</field>
+            <field name="arch" type="xml">
+
+
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'homepage'"/>
+                    <div id="wrap" class="oe_structure oe_empty" style=" background-color:#D9D9D9;">
+
+                        <section class="s_title pt40 pb40 o_colored_level" data-vcss="001" data-snippet="s_title"
+                                 data-name="Título" style="background-image: none; background-color:#D9D9D9;">
+                            <div class="container s_allow_columns" style="display:flex; align-items:baseline;">
+                              <p style="font-size:25px; margin-right:10px; font-weight:bold;">
+                                  Mis vouchers
+                              </p>
+                                <p> Recordá que solo podés añadir 5 cupones por dia. Uno solo por cupón</p>
+                            </div>
+                        </section>
+
+                        <div class="container" >
+                            <div id="owl_component_root" class="row"
+                                 style=" background-color:#D9D9D9 display:flex;justify-content:space-between; margin-bottom:80px;">
+                                <t t-set="cupones" t-value="list_cupons"/>
+                                <t t-foreach="cupones" t-as="cupon">
+
+                                    <div class="ticket-box col-2 " t-attf-id="{{cupon.code}}"
+                                         >
+                                        <p t-esc="cupon.name">test</p>
+                                        <div style="display: flex; align-items:center; margin-bottom: 15px;">
+                                            <i class="fa fa-building" aria-hidden="true"/>
+
+                                            <p t-esc="cupon.empresa_id.name" style="margin-bottom:0;">test</p>
+
+                                        </div>
+                                        <div>
+                                            <p t-esc="cupon.code"></p>
+
+                                        </div>
+
+
+                                        <div style="display:flex; justify-content:space-around;">
+
+                                            <p id="qtyCupon" class="button-portal">
+                                                <i class="fa fa-download" aria-hidden="true"/>
+
+                                            </p>
+
+                                            <p class="button-portal">
+                                                <button id="Test">
+                                                    <i class="fa fa-print" aria-hidden="true"/>
+
+                                                </button>
+
+                                            </p>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </t>
+
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

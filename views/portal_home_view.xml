@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <template id="portal_my_home_test" name="Test" inherit_id="portal.portal_my_home" customize_show="True"
+                  priority="30">
+
+            <xpath expr="//div[@id='portal_common_category']" position="replace">
+                <div class="o_portal_index_card col-md-6 order-2">
+                    <a href="/my_cupons" title="Sus cupones"
+                       class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset text-bg-light">
+                        <div class="o_portal_icon align-self-start">
+                            <img src="/voucher_ch/static/src/img/cupon_port.png" loading="lazy" style=""/>
+                        </div>
+                        <div>
+                            <h5 class="mt-0 mb-1 d-flex gap-2">
+
+                                <span class="d-none" data-placeholder_count="invoice_count">0</span>
+                                <span>Sus cupones</span>
+                            </h5>
+                            <p class="m-0 text-600">
+                                Encuentre sus cupones acá
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+
+            </xpath>
+
+
+        </template>
+
+        <template id="portal_my_home_invoice" name="Show Invoices &amp; Bills" inherit_id="portal.portal_my_home"
+                  customize_show="True" priority="30">
+
+        </template>
+
+    </data>
+
+</odoo>
+
+

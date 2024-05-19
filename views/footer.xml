@@ -1,0 +1,91 @@
+<odoo>
+    <data>
+        <template id="footer_voucher" name="Custom Footer" inherit_id="website.footer_custom">
+            <xpath expr="//div[@id='footer']" position="replace">
+
+
+                <div id="footer" class="oe_structure oe_structure_solo" style="background-color:#282827	;"
+                     t-ignore="true"
+                     t-if="not no_footer">
+                    <section class="s_text_block " data-snippet="s_text_block" data-name="Text">
+                        <div class="container">
+                            <div class="row ">
+
+
+                                <div class="col-sm-6 pt24 pb24" style="display:flex; align-items:center;">
+                                    <div class="offset-lg-1 pt24 pb24 text-center">
+
+                                    <img src="/voucher_ch/static/src/img/escudo chajari.png"
+                                         class="img img-fluid logo_footer" alt="My Website" loading="lazy"
+                                         style="height: 100px;"></img>
+                                </div>
+                                    <ul style="list-style:none;">
+                                        <li>
+                                            <p>Municipalidad de Chajari</p>
+
+                                        </li>
+                                        <li>
+                                            <p>+54 (03456) 420150 / 420135</p>
+
+                                        </li>
+                                        <li>
+                                            <p>www.chajari.gob.ar</p>
+                                        </li>
+
+                                        <li>
+                                            <p>Salvarredy 1430 (3228) Chajarí, Entre Ríos</p>
+                                        </li>
+
+
+                                    </ul>
+
+                                </div>
+
+
+                                <div class="col-sm-6 s_social_media text-start o_not_editable"
+                                     data-snippet="s_social_media"
+                                     data-name="Social Media" contenteditable="false">
+                                    <div class="footer-container">
+                                        <a href="https://www.facebook.com/gobiernodechajari/"
+                                           style="padding-left: 20px;">
+                                            <img src="/voucher_ch/static/src/img/IconoFacebook.png"
+                                                 class="img img-fluid" alt="My Website" loading="lazy"
+                                                 style="width:35px;"
+                                            ></img>
+                                        </a>
+                                        <a href="https://www.instagram.com/gobiernodechajari/" class="s_social_media_facebook"
+                                           target="_blank"
+                                           aria-label="Facebook">
+                                            <img src="/voucher_ch/static/src/img/IconoInstagram.png"
+                                                 class="img img-fluid" alt="My Website" loading="lazy"
+                                                 style="width:35px;"
+                                            ></img>
+                                        </a>
+                                        <a href="https://twitter.com/gobiernochajari" style="padding-left: 10px;">
+                                            <img src="/voucher_ch/static/src/img/IconoTwitter.png"
+                                                 class="img img-fluid" alt="My Website" loading="lazy"
+                                                 style="width:35px;"
+                                            ></img>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </xpath>
+        </template>
+
+
+        <template id="footer_copyright_company_name" inherit_id="website.layout">
+            <xpath expr="//div[contains(@class, 'container') and contains(@class, 'py-3')]" position="replace">
+                <div>
+
+
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
+
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="voucher_form_view" model="ir.ui.view">
+            <field name="name">voucher.form</field>
+            <field name="model">dm.cupon.vaucher</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="estado"/>
+                            <field name="code"/>
+                            <field name="cupon_id"/>
+                            <field name="empresa_id"/>
+
+                            <field name="user_id"/>
+
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="cupon_vaucher_tree_view" model="ir.ui.view">
+            <field name="name">cupon.form</field>
+            <field name="model">dm.cupon.vaucher</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="estado"/>
+                    <field name="code"/>
+                    <field name="cupon_id"/>
+                    <field name="user_id"/>
+
+
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="action_cupon_voucher" model="ir.actions.act_window">
+            <field name="name">Voucher</field>
+            <field name="res_model">dm.cupon.vaucher</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_voucher"  parent="menu_empleo" name="Voucher" sequence="10" groups="base.group_user" action="action_cupon_voucher"/>
+
+    </data>
+</odoo>

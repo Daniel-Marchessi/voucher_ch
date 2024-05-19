@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <record id="benef_view_form" model="website.page">
+            <field name="name">Beneficiario</field>
+            <field name="url">/beneficiario</field>
+            <field name="type">qweb</field>
+            <field name="key">voucher_ch.benef_view_form</field>
+            <field name="arch" type="xml">
+
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty background-form"
+                         style="background-color:#3C3C3B !important; padding-top:30px;">
+
+
+                        <div class="container mt-3" style="width:60%;">
+                            <h4 class="subtitulo" style="color:#F3AD49;">Formulario de inscripción de</h4>
+                            <h3 class="titulo" style="color:#F3AD49;">Beneficiarios</h3>
+                            <hr style="color: white;"/>
+
+                            <!--         Definir la action del form con el controllers-->
+                            <form action="/beneficiario-post" method="post" enctype="multipart/form-data">
+                                <div class="s_website_form_rows row s_col_no_bgcolor">
+
+                                    <!--    Input imagen -->
+                                    <div class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required  "
+                                         data-type="char" data-name="Field">
+                                        <span class="s_website_form_label_content gris">Foto (opcional)</span>
+
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <div class="col-sm">
+
+                                                <span class="btn btn-file" style="color: #B1DCE8;">
+                                                    <i class="fa fa-upload " aria-hidden="true"></i>
+
+                                                    Añadir foto
+                                                    <input type="file" name="foto"/>
+                                                </span>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="subtitulo-form" style="color:white">TUS DATOS</h3>
+
+
+                                    <!--                                        Nombre-->
+                                    <div class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required  "
+                                         data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+
+                                            <div class="col-sm">
+
+                                                <input type="text" class="form-control fondo s_website_form_input"
+                                                       name="name" required="1" placeholder="Nombre"
+                                                       data-fill-with="name"
+                                                />
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--                                        Apellido-->
+                                    <div class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required  "
+                                         data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+
+                                            <div class="col-sm">
+
+                                                <input type="text" class="form-control fondo s_website_form_input"
+                                                       name="address" required="1" placeholder="Apellido"
+                                                       data-fill-with="address"
+                                                />
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--                                        Numero documento -->
+                                    <div class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required  "
+                                         data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+
+                                            <div class="col-sm">
+
+                                                <input type="text" class="form-control  fondo s_website_form_input"
+                                                       name="documento" required="1" placeholder="N° de documento"
+                                                       data-fill-with="documento"
+                                                       pattern=".{8}"
+                                                       title="El número de documento debe tener exactamente 8 numeros."
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--                                        Direccion -->
+
+                                    <div class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required"
+                                         data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+
+                                            <div class="col-sm">
+                                                <input type="text" class="form-control  fondo s_website_form_input"
+                                                       name="direccion" required="1" placeholder="Direccion"
+                                                       data-fill-with="direccion"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--                                        Ciudad-->
+
+                                    <div class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required  "
+                                         data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                           <div class="col-sm">
+                                                <input type="text" class="form-control  fondo s_website_form_input"
+                                                       name="ciudad" required="1" placeholder="Ciudad"
+                                                       data-fill-with="ciudad"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--                                        provincia-->
+
+                                    <div class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required  "
+                                         data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <div class="col-sm">
+                                                <select class="form-control fondo s_website_form_input"
+                                                        name="provincia"
+                                                        id="ogwfdrq867hv" required="1">
+                                                    <option value="Buenos Aires">Buenos Aires</option>
+                                                    <option value="Catamarca">Catamarca</option>
+                                                    <option value="Chaco">Chaco</option>
+                                                    <option value="Chubut">Chubut</option>
+                                                    <option value="Córdoba">Córdoba</option>
+                                                    <option value="Corrientes">Corrientes</option>
+                                                    <option value="Entre Ríos">Entre Ríos</option>
+                                                    <option value="Formosa">Formosa</option>
+                                                    <option value="Jujuy">Jujuy</option>
+                                                    <option value="La Pampa">La Pampa</option>
+                                                    <option value="La Rioja">La Rioja</option>
+                                                    <option value="Mendoza">Mendoza</option>
+                                                    <option value="Misiones">Misiones</option>
+                                                    <option value="Neuquén">Neuquén</option>
+                                                    <option value="Río Negro">Río Negro</option>
+                                                    <option value="Salta">Salta</option>
+                                                    <option value="San Juan">San Juan</option>
+                                                    <option value="San Luis">San Luis</option>
+                                                    <option value="Santa Cruz">Santa Cruz</option>
+                                                    <option value="Santa Fe">Santa Fe</option>
+                                                    <option value="Santiago del Estero">Santiago del Estero</option>
+                                                    <option value="Tierra del Fuego">Tierra del Fuego</option>
+                                                    <option value="Tucumán">Tucumán</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required  "
+                                         data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+
+                                            <div class="col-sm">
+                                                <input type="text" class="form-control fondo s_website_form_input"
+                                                       name="telefono" placeholder="Telefono"
+                                                       data-fill-with="telefono" required="1"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required  "
+                                         data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+
+                                            <div class="col-sm">
+
+                                                <input type="email" class="form-control fondo s_website_form_input"
+                                                       name="email" placeholder="Correo electronico"
+                                                       data-fill-with="mail" required="1"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <div class="col-sm">
+
+                                            <button type="submit" style="width:100%;"
+                                                    class="btn mt-2 mb-5 btn-form">Enviar
+                                            </button>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </form>
+
+
+                        </div>
+
+
+                    </div>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

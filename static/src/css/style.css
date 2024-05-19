@@ -1,0 +1,156 @@
+
+
+.shapes-container {
+  width: 250px;
+}
+
+
+.circle {
+  border-radius: 50%; /* Esto crea la forma circular */
+  width: 40px;
+  height: 40px;
+}
+
+.square {
+  width: 40px;
+  height: 40px;
+}
+.back-home{
+
+    background-size: cover;
+    background-position: center;
+}
+.ticket-box{
+background-image: url("/voucher_ch/static/src/img/Ticket.png");
+
+margin-top: 20px;
+min-width:250px;
+max-width: 300px;
+padding: 10px 10px 10px 30px;
+min-height:150px;
+margin-right: 30px;
+
+
+}
+.container-home{
+
+margin: 0 auto;
+}
+.btn-add{
+background-color:#EB6C80;
+padding-top:1px;
+padding-bottom:3px;
+}
+.btn-comercio{
+
+background-color: #EB6C80;
+color:white;
+
+}
+.btn-beneficiario{
+
+background-color: #F3AD49;
+color:white;
+}
+.search-container{
+
+ position: relative;
+ padding: 10px;
+ background: white;
+ margin-top: -15px;
+ border-radius:10px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+      width: 25% !important;
+     border : 1px solid #dadada;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    cursor: inherit;
+    display: block;
+}
+
+.gris{
+color: white;
+}
+
+.fondo{
+background-color: #3C3C3B;
+border: 1px solid white;
+color:white;
+}
+.background-form {
+    background-image: url('../img/Fondo-formulario.jpg');
+   object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btn-form{
+
+background-color: #EB6C80;
+color:white;
+}
+
+.button-portal{
+
+background-color: #B1DCE8;
+padding-top:3px;
+padding-left:10px;
+padding-right: 10px;
+padding-bottom:3px;
+border-radius:3px;
+margin:10px;
+}
+
+
+@media print {
+  body {
+    visibility: hidden;
+  }
+
+   .ticket-box {
+
+ print-color-adjust:exact;
+                -webkit-print-color-adjust:exact;
+                background-image: url('../img/Ticket color.png') !important;
+
+    visibility: visible !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+        transform: translate(-50%, -50%);
+    max-height: 200px !important;
+    width: 400px !important;
+    margin: 0 auto !important;
+
+  }
+    .ticket-box p{
+    color:white;
+    }
+     .button-portal{
+        visibility: hidden;
+    }
+}
+
+.container-search-o{
+display:flex;
+align-items:center;
+margin-right: 10px;
+margin-left: 10px !important;
+}
+.footer-container{
+display:flex !important;
+ align-items:center;
+  height:100%;
+   justify-content: flex-end;
+    margin-right:10px;
+}

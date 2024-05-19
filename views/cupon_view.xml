@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="cupon_form_view" model="ir.ui.view">
+            <field name="name">cupon.form</field>
+            <field name="model">dm.cupon</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <header>
+                            <button class="text-right" type="object" name="wizard_cupon" string="Generar vouchers"
+                                    invisible="not id"/>
+                        </header>
+                        <group>
+                            <field name="name"/>
+                            <field name="empresa_id"/>
+                            <field name="categoria_id"/>
+                            <field name="cantidad"/>
+
+                        </group>
+
+                        <notebook>
+                            <page string="Vouchers">
+                                <field name="vaucher_ids"/>
+
+                            </page>
+                        </notebook>
+
+
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="cupon_tree_view" model="ir.ui.view">
+            <field name="name">cupon.form</field>
+            <field name="model">dm.cupon</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="empresa_id"/>
+                    <field name="cantidad"/>
+
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="action_cupon" model="ir.actions.act_window">
+            <field name="name">Cupon</field>
+            <field name="res_model">dm.cupon</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_empleo" name="Cupon" sequence="10" groups="base.group_user" action="action_cupon"/>
+
+    </data>
+</odoo>

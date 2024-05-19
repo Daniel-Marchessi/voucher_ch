@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="cupon_wz_view" model="ir.ui.view">
+            <field name="name">wz.cupon.form</field>
+            <field name="model">wz.cupon</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="cantidad"/>
+
+                        </group>
+                        <footer>
+                            <button type="object" name="create_vouchers" string="Enviar"/>
+                        </footer>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+    </data>
+</odoo>

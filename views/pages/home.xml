@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="home_view" model="website.page">
+            <field name="name">Home</field>
+            <field name="url">/</field>
+            <field name="type">qweb</field>
+            <field name="key">voucher_ch.home_view</field>
+            <field name="arch" type="xml">
+
+
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'homepage'"/>
+                    <div id="wrap" class="oe_structure oe_empty" style=" background-color:#D9D9D9;">
+                        <section
+                                class="s_cover   bg-black-50 back-home pt96 o_colored_level s_parallax_no_overflow_hidden"
+                                data-scroll-background-ratio="0" data-snippet="s_cover" data-name="Portada"
+                                style="background-image: url('voucher_ch/static/src/img/Fondo pantalla principal.png');); min-height:450px;">
+                            <div class="s_allow_columns ">
+                                <div class="container row o_animate o_visible o_anim_zoom_out" style="width:100%">
+
+                                    <div class="col-lg-3" style="text-align: right;">
+                                        <img src="/voucher_ch/static/src/img/Gráfico ticket porcentaje.png"
+                                             class="img img-fluid"
+                                             alt="My Website" loading="lazy" style="height: 100px;"/>
+                                    </div>
+                                    <div class="col-lg-5 o_colored_level">
+                                        <h1 class=" o_default_snippet_text"
+                                            style="text-align: left; font-weight: 1000;">DESCUENTOS PARA LOS
+                                            CHAJARIENSES
+                                        </h1>
+                                        <p class="lead o_default_snippet_text" style="text-align: left;">LA VOUCHERA
+
+                                            busca impulsar y fidelizar el circuito de compra local, generando
+                                            beneficios
+                                            simultáneos para los vecinos y los comercios de distintos rubros.
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-4" style="display: flex; align-items:center; margin-top:-50px; ">
+                                        <div style="margin-left:40px;">
+
+
+                                            <p style="text-align:center;">
+                                                Registrarse como :
+                                            </p>
+                                            <div>
+                                                <a href="/negocio" style="margin-right:10px">
+                                                    <button class="btn btn-comercio">
+
+                                                        Comercio
+                                                    </button>
+                                                </a>
+                                                <a href="/beneficiario">
+                                                    <button class="btn btn-beneficiario">
+                                                        Beneficiario
+                                                    </button>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <div class="container col-9  search-container">
+                            <form method="get" data-snippet="s_searchbar_input"
+                                  class="o_searchbar_form o_wait_lazy_js s_searchbar_input" action="/website/search"
+                                  data-name="Búsqueda">
+                                <div role="search" class="input-group " style="padding:10px;">
+                                    <input type="search" name="search" style="background-color:#ECECEC; border:none;"
+                                           class="search-query form-control oe_search_box None"
+                                           placeholder="Escribí el producto que buscás" data-search-type="all"
+                                           data-limit="5"
+                                           data-display-image="true" data-display-description="true"
+                                           data-display-extra-link="true" data-display-detail="true"
+                                           data-order-by="name asc" autocomplete="off"/>
+
+
+                                    <button type="submit" aria-label="Búsqueda" title="Búsqueda"
+                                            class="btn oe_search_button btn-primary"
+                                            style="background-color:#ECECEC; border:none; border-radius:5px;">
+                                        <i class="oi oi-search" style="color:black;"/>
+                                    </button>
+                                    <div class="container-search-o">
+                                        <p style="margin-bottom:0;">o</p>
+                                    </div>
+
+                                    <select class="form-select s_website_form_input"
+                                            style="background-color: #ECECEC; border:none; border-radius:5px;"
+                                            name="select-cat"
+                                            id="select-cat">
+                                        <t t-set="categorias" t-value="list_categorias"/>
+
+                                        <option value="">Seleccione una categoria</option>
+                                        <t t-foreach="categorias" t-as="categ">
+                                            <option>
+                                                <t t-esc="categ.name"></t>
+                                            </option>
+                                        </t>
+                                    </select>
+
+
+                                </div>
+                                <input name="order" type="hidden" class="o_search_order_by" value="name asc"/>
+                            </form>
+                        </div>
+
+
+                        <section class="s_title pt40 pb40 o_colored_level o_animate o_animate_on_scroll o_anim_slide_in o_anim_from_right" data-vcss="001" data-snippet="s_title"
+                                 data-name="Título" style="background-image: none; background-color:#D9D9D9;">
+                            <div class="container s_allow_columns o_animate o_anim_slide_in o_anim_from_right" style="">
+                                <h3 class="" style="text-align: center;">Vouchers más
+                                    descargados
+
+                                </h3>
+                            </div>
+                        </section>
+                        <div class="container container-home o_animate o_anim_slide_in o_visible o_anim_from_bottom" style="animation-duration: 2s;">
+                            <div id="owl_component_root" class="row o_animate o_animate_on_scroll o_anim_slide_in o_anim_from_right"
+                                 style=" background-color:#D9D9D9;  margin-bottom:90px;">
+                                <t t-set="cupones" t-value="list_cupons"/>
+                                <t t-foreach="cupones" t-as="cupon">
+
+                                    <div class="ticket-box col-lg-2 col-md-6"
+                                         style="background-image: url('/voucher_ch/static/src/img/Ticket.png');); ">
+                                        <p t-esc="cupon.name" style="font-weight: bold;">test</p>
+                                        <div style="display: flex; align-items:center; margin-bottom: 15px;">
+
+                                            <i class="fa fa-building" aria-hidden="true" style="margin-right:5px;"/>
+
+                                            <p t-esc="cupon.empresa_id.name" style="margin-bottom:0; font-size:12px;">
+                                                test
+                                            </p>
+
+                                        </div>
+
+
+                                        <div style="display:flex; justify-content:space-around; align-items:center;">
+
+                                            <div style="display:flex;">
+                                                <p id="qtyCupon"
+                                                   style="font-size:12px; margin-bottom:0; margin-right:6px;">
+                                                    <t t-esc="cupon.cantidad"/>
+                                                </p>
+                                                <p style="font-size:12px; margin-bottom:0;">Disponibles</p>
+                                            </div>
+
+
+                                            <t t-if="is_authenticated">
+
+                                                <button class="btn btn-add" style="color:white; font-size:14px;"
+                                                        t-att-data-oe-cantidad="cupon.cantidad"
+                                                        t-att-data-oe-id="cupon.id">Añadir
+                                                </button>
+                                                <p id="currentUser" style="display:none;">
+                                                    <t t-esc="request.env.user.id"/>
+                                                </p>
+                                            </t>
+                                        </div>
+
+                                    </div>
+
+                                </t>
+
+                            </div>
+
+                            <div class="modal fade" id="popup" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Felicidades</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Ha obtenido un ticket</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" id="close_popUp"
+                                                    data-dismiss="modal">Aceptar
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <section class="s_title  pb40 o_colored_level" data-vcss="001" data-snippet="s_title"
+                                 data-name="Título" style="background-image: none; background-color:#D9D9D9; ">
+                            <div class="container s_allow_columns  o_animate o_anim_slide_in o_anim_from_right" style="animation-duration: 2s;">
+                                <h3 class="" style="text-align: center;">Ultimos Vouchers agregados
+
+                                </h3>
+                            </div>
+                        </section>
+                        <div class="container container-home  o_animate o_anim_slide_in o_visible o_anim_from_bottom">
+                            <div id="owl_component_root" class="row "
+                                 style=" background-color:#D9D9D9;  margin-bottom:90px;">
+                                <t t-set="cupones" t-value="list_cupons_limited"/>
+                                <t t-foreach="cupones" t-as="cupon">
+
+                                    <div class="ticket-box col-lg-2 col-md-6 "
+                                         style="background-image: url('/voucher_ch/static/src/img/Ticket.png');); ">
+                                        <p t-esc="cupon.name" style="font-weight: bold;">test</p>
+                                        <div style="display: flex; align-items:center; margin-bottom: 15px;">
+
+                                            <i class="fa fa-building" aria-hidden="true" style="margin-right:5px;"/>
+
+                                            <p t-esc="cupon.empresa_id.name" style="margin-bottom:0; font-size:12px;">
+                                                test
+                                            </p>
+
+                                        </div>
+
+
+                                        <div style="display:flex; justify-content:space-around; align-items:center;">
+
+                                            <div style="display:flex;">
+                                                <p id="qtyCupon"
+                                                   style="font-size:12px; margin-bottom:0; margin-right:6px;">
+                                                    <t t-esc="cupon.cantidad"/>
+                                                </p>
+                                                <p style="font-size:12px; margin-bottom:0;">Disponibles</p>
+                                            </div>
+
+
+                                            <t t-if="is_authenticated">
+
+                                                <button class="btn btn-add" style="color:white; font-size:14px;"
+                                                        t-att-data-oe-cantidad="cupon.cantidad"
+                                                        t-att-data-oe-id="cupon.id">Añadir
+                                                </button>
+                                                <p id="currentUser" style="display:none;">
+                                                    <t t-esc="request.env.user.id"/>
+                                                </p>
+                                            </t>
+                                        </div>
+
+                                    </div>
+
+                                </t>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>
